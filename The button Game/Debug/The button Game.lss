@@ -1,0 +1,1197 @@
+
+The button Game.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000002  00800100  0000065c  000006f0  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         0000065c  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          0000000a  00800102  00800102  000006f2  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  000006f2  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000724  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 000000f8  00000000  00000000  00000764  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   0000123f  00000000  00000000  0000085c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000a05  00000000  00000000  00001a9b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000884  00000000  00000000  000024a0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000184  00000000  00000000  00002d24  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    0000058f  00000000  00000000  00002ea8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    000005fe  00000000  00000000  00003437  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 000000a8  00000000  00000000  00003a35  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__ctors_end>
+   4:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+   8:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+   c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  10:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  14:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  18:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  1c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  20:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  24:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  28:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  2c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  30:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  34:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  38:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  3c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  40:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  44:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  48:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  4c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  50:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  54:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  58:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  5c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  60:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  64:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  68:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  6c:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  70:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  74:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+  78:	0c 94 5b 00 	jmp	0xb6	; 0xb6 <__bad_interrupt>
+
+0000007c <__ctors_end>:
+  7c:	11 24       	eor	r1, r1
+  7e:	1f be       	out	0x3f, r1	; 63
+  80:	cf ef       	ldi	r28, 0xFF	; 255
+  82:	d8 e0       	ldi	r29, 0x08	; 8
+  84:	de bf       	out	0x3e, r29	; 62
+  86:	cd bf       	out	0x3d, r28	; 61
+
+00000088 <__do_copy_data>:
+  88:	11 e0       	ldi	r17, 0x01	; 1
+  8a:	a0 e0       	ldi	r26, 0x00	; 0
+  8c:	b1 e0       	ldi	r27, 0x01	; 1
+  8e:	ec e5       	ldi	r30, 0x5C	; 92
+  90:	f6 e0       	ldi	r31, 0x06	; 6
+  92:	02 c0       	rjmp	.+4      	; 0x98 <__do_copy_data+0x10>
+  94:	05 90       	lpm	r0, Z+
+  96:	0d 92       	st	X+, r0
+  98:	a2 30       	cpi	r26, 0x02	; 2
+  9a:	b1 07       	cpc	r27, r17
+  9c:	d9 f7       	brne	.-10     	; 0x94 <__do_copy_data+0xc>
+
+0000009e <__do_clear_bss>:
+  9e:	21 e0       	ldi	r18, 0x01	; 1
+  a0:	a2 e0       	ldi	r26, 0x02	; 2
+  a2:	b1 e0       	ldi	r27, 0x01	; 1
+  a4:	01 c0       	rjmp	.+2      	; 0xa8 <.do_clear_bss_start>
+
+000000a6 <.do_clear_bss_loop>:
+  a6:	1d 92       	st	X+, r1
+
+000000a8 <.do_clear_bss_start>:
+  a8:	ac 30       	cpi	r26, 0x0C	; 12
+  aa:	b2 07       	cpc	r27, r18
+  ac:	e1 f7       	brne	.-8      	; 0xa6 <.do_clear_bss_loop>
+  ae:	0e 94 98 01 	call	0x330	; 0x330 <main>
+  b2:	0c 94 2c 03 	jmp	0x658	; 0x658 <_exit>
+
+000000b6 <__bad_interrupt>:
+  b6:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ba <appInit>:
+void appInit(){
+	/************************************************************************/
+	/* Initialize LEDs for PORTB for the first player.                      */
+	/************************************************************************/
+	// Initialization of the pin for the 1st led to be output.
+	LED_init(PLAYER_1_PORT, LED_1_PIN);	
+  ba:	60 e0       	ldi	r22, 0x00	; 0
+  bc:	82 e4       	ldi	r24, 0x42	; 66
+  be:	0e 94 8d 01 	call	0x31a	; 0x31a <LED_init>
+	
+	// Initialization of the pin for the 2nd led to be output.
+	LED_init(PLAYER_1_PORT, LED_2_PIN);	
+  c2:	61 e0       	ldi	r22, 0x01	; 1
+  c4:	82 e4       	ldi	r24, 0x42	; 66
+  c6:	0e 94 8d 01 	call	0x31a	; 0x31a <LED_init>
+	
+	// Initialization of the pin for the 3rd led to be output.
+	LED_init(PLAYER_1_PORT, LED_3_PIN);
+  ca:	62 e0       	ldi	r22, 0x02	; 2
+  cc:	82 e4       	ldi	r24, 0x42	; 66
+  ce:	0e 94 8d 01 	call	0x31a	; 0x31a <LED_init>
+	
+	// Initialization of the pin for the 4th led to be output.
+	LED_init(PLAYER_1_PORT, LED_4_PIN);
+  d2:	63 e0       	ldi	r22, 0x03	; 3
+  d4:	82 e4       	ldi	r24, 0x42	; 66
+  d6:	0e 94 8d 01 	call	0x31a	; 0x31a <LED_init>
+	
+	// Initialization of the pin for the 5th led to be output.
+	LED_init(PLAYER_1_PORT, LED_5_PIN);
+  da:	64 e0       	ldi	r22, 0x04	; 4
+  dc:	82 e4       	ldi	r24, 0x42	; 66
+  de:	0e 94 8d 01 	call	0x31a	; 0x31a <LED_init>
+	
+	// Initialization of the pin for the 6th led to be output.
+	LED_init(PLAYER_1_PORT, LED_6_PIN);
+  e2:	65 e0       	ldi	r22, 0x05	; 5
+  e4:	82 e4       	ldi	r24, 0x42	; 66
+  e6:	0e 94 8d 01 	call	0x31a	; 0x31a <LED_init>
+	
+	// Initialization of the pin for the 7th led to be output.
+	LED_init(PLAYER_1_PORT, LED_7_PIN);
+  ea:	66 e0       	ldi	r22, 0x06	; 6
+  ec:	82 e4       	ldi	r24, 0x42	; 66
+  ee:	0e 94 8d 01 	call	0x31a	; 0x31a <LED_init>
+	
+	/************************************************************************/
+	/* Initialize LEDs for PORTB for the 2nd player.                      */
+	/************************************************************************/
+	// Initialization of the pin for the 1st led to be output.
+	LED_init(PLAYER_2_PORT, LED_01_PIN);
+  f2:	60 e0       	ldi	r22, 0x00	; 0
+  f4:	84 e4       	ldi	r24, 0x44	; 68
+  f6:	0e 94 8d 01 	call	0x31a	; 0x31a <LED_init>
+	
+	// Initialization of the pin for the 2nd led to be output.
+	LED_init(PLAYER_2_PORT, LED_02_PIN);
+  fa:	61 e0       	ldi	r22, 0x01	; 1
+  fc:	84 e4       	ldi	r24, 0x44	; 68
+  fe:	0e 94 8d 01 	call	0x31a	; 0x31a <LED_init>
+	
+	// Initialization of the pin for the 3rd led to be output.
+	LED_init(PLAYER_2_PORT, LED_03_PIN);
+ 102:	62 e0       	ldi	r22, 0x02	; 2
+ 104:	84 e4       	ldi	r24, 0x44	; 68
+ 106:	0e 94 8d 01 	call	0x31a	; 0x31a <LED_init>
+	
+	// Initialization of the pin for the 4th led to be output.
+	LED_init(PLAYER_2_PORT, LED_04_PIN);
+ 10a:	63 e0       	ldi	r22, 0x03	; 3
+ 10c:	84 e4       	ldi	r24, 0x44	; 68
+ 10e:	0e 94 8d 01 	call	0x31a	; 0x31a <LED_init>
+	
+	// Initialization of the pin for the 5th led to be output.
+	LED_init(PLAYER_2_PORT, LED_05_PIN);
+ 112:	64 e0       	ldi	r22, 0x04	; 4
+ 114:	84 e4       	ldi	r24, 0x44	; 68
+ 116:	0e 94 8d 01 	call	0x31a	; 0x31a <LED_init>
+	
+	// Initialization of the pin for the 6th led to be output.
+	LED_init(PLAYER_2_PORT, LED_06_PIN);
+ 11a:	65 e0       	ldi	r22, 0x05	; 5
+ 11c:	84 e4       	ldi	r24, 0x44	; 68
+ 11e:	0e 94 8d 01 	call	0x31a	; 0x31a <LED_init>
+	
+	// Initialization of the pin for the 7th led to be output.
+	LED_init(PLAYER_2_PORT, LED_07_PIN);
+ 122:	66 e0       	ldi	r22, 0x06	; 6
+ 124:	84 e4       	ldi	r24, 0x44	; 68
+ 126:	0e 94 8d 01 	call	0x31a	; 0x31a <LED_init>
+	
+	/************************************************************************/
+	/* Initialize the buttons for both players to be input                  */
+	/************************************************************************/
+	// Initializing the pin of the button to be input for the 1st player.
+	buttonInit(BUTTON_1_PORT, BUTTON_1_PIN); //
+ 12a:	67 e0       	ldi	r22, 0x07	; 7
+ 12c:	82 e4       	ldi	r24, 0x42	; 66
+ 12e:	0e 94 86 01 	call	0x30c	; 0x30c <buttonInit>
+	
+	// Initializing the pin of the button to be input for the 2nd player.
+	buttonInit(BUTTON_2_PORT, BUTTON_2_PIN); //
+ 132:	67 e0       	ldi	r22, 0x07	; 7
+ 134:	84 e4       	ldi	r24, 0x44	; 68
+ 136:	0e 94 86 01 	call	0x30c	; 0x30c <buttonInit>
+ 13a:	08 95       	ret
+
+0000013c <processPressedButton>:
+}
+
+
+
+uint8_t processPressedButton(uint8_t playerID) // This function is made to handle the state when the button is pressed.
+{
+ 13c:	0f 93       	push	r16
+ 13e:	1f 93       	push	r17
+ 140:	cf 93       	push	r28
+			/*	This variable is to make sure that the  button is pressed for at least that amount of CONFIDENCE_LEVEL
+				to avoid the button De-bouncing problem.(index 0 for 1st player and 1 for 2nd player)*/
+			static int pressed_confidence_level[2] = {0, 0};
+	
+						
+			pressed_confidence_level[playerID]++; // Incrementing the value each iteration to check on the button if it's pressed at least the CONFIDENCE_LEVEL.
+ 142:	08 2f       	mov	r16, r24
+ 144:	10 e0       	ldi	r17, 0x00	; 0
+ 146:	f8 01       	movw	r30, r16
+ 148:	ee 0f       	add	r30, r30
+ 14a:	ff 1f       	adc	r31, r31
+ 14c:	e8 5f       	subi	r30, 0xF8	; 248
+ 14e:	fe 4f       	sbci	r31, 0xFE	; 254
+ 150:	20 81       	ld	r18, Z
+ 152:	31 81       	ldd	r19, Z+1	; 0x01
+ 154:	2f 5f       	subi	r18, 0xFF	; 255
+ 156:	3f 4f       	sbci	r19, 0xFF	; 255
+ 158:	31 83       	std	Z+1, r19	; 0x01
+ 15a:	20 83       	st	Z, r18
+			if(pressed_confidence_level[playerID] >= CONFIDENCE_LEVEL)
+ 15c:	24 3f       	cpi	r18, 0xF4	; 244
+ 15e:	31 40       	sbci	r19, 0x01	; 1
+ 160:	84 f1       	brlt	.+96     	; 0x1c2 <processPressedButton+0x86>
+
+			{
+
+				if(pressed[playerID]) // This check to indicate that if it's a new press of just a long one!
+ 162:	f8 01       	movw	r30, r16
+ 164:	e0 50       	subi	r30, 0x00	; 0
+ 166:	ff 4f       	sbci	r31, 0xFF	; 255
+ 168:	90 81       	ld	r25, Z
+ 16a:	99 23       	and	r25, r25
+ 16c:	09 f1       	breq	.+66     	; 0x1b0 <processPressedButton+0x74>
+ 16e:	c8 2f       	mov	r28, r24
+
+				{
+
+					pressed[playerID] = 0; // that's a guard to stop the LEDs from toggling multiple times in the long presses.
+ 170:	f8 01       	movw	r30, r16
+ 172:	e0 50       	subi	r30, 0x00	; 0
+ 174:	ff 4f       	sbci	r31, 0xFF	; 255
+ 176:	10 82       	st	Z, r1
+					if(playerID == PLAYER_ONE)
+ 178:	81 11       	cpse	r24, r1
+ 17a:	08 c0       	rjmp	.+16     	; 0x18c <processPressedButton+0x50>
+						LED_on(PLAYER_1_PORT, playerCounter[playerID]); // Turn on the LED that each one in its turn based on the playerCounter which tracks the number of presses for 1st player.
+ 17c:	f8 01       	movw	r30, r16
+ 17e:	ea 5f       	subi	r30, 0xFA	; 250
+ 180:	fe 4f       	sbci	r31, 0xFE	; 254
+ 182:	60 81       	ld	r22, Z
+ 184:	82 e4       	ldi	r24, 0x42	; 66
+ 186:	0e 94 91 01 	call	0x322	; 0x322 <LED_on>
+ 18a:	07 c0       	rjmp	.+14     	; 0x19a <processPressedButton+0x5e>
+					else
+						LED_on(PLAYER_2_PORT, playerCounter[playerID]); // Turn on the LED that each one in its turn based on the playerCounter which tracks the number of presses for 2nd player.
+ 18c:	f8 01       	movw	r30, r16
+ 18e:	ea 5f       	subi	r30, 0xFA	; 250
+ 190:	fe 4f       	sbci	r31, 0xFE	; 254
+ 192:	60 81       	ld	r22, Z
+ 194:	84 e4       	ldi	r24, 0x44	; 68
+ 196:	0e 94 91 01 	call	0x322	; 0x322 <LED_on>
+					
+					if(playerCounter[playerID] < 6) // This is to check if the player didn't exceed the number of LEDs.
+ 19a:	f8 01       	movw	r30, r16
+ 19c:	ea 5f       	subi	r30, 0xFA	; 250
+ 19e:	fe 4f       	sbci	r31, 0xFE	; 254
+ 1a0:	80 81       	ld	r24, Z
+ 1a2:	86 30       	cpi	r24, 0x06	; 6
+ 1a4:	80 f4       	brcc	.+32     	; 0x1c6 <processPressedButton+0x8a>
+						playerCounter[playerID]++;
+ 1a6:	f8 01       	movw	r30, r16
+ 1a8:	ea 5f       	subi	r30, 0xFA	; 250
+ 1aa:	fe 4f       	sbci	r31, 0xFE	; 254
+ 1ac:	8f 5f       	subi	r24, 0xFF	; 255
+ 1ae:	80 83       	st	Z, r24
+						return playerID;
+					}
+
+				}
+
+				pressed_confidence_level[playerID] = 0; // Resetting the check for confidence level if we took action based on a past achieved level to start over.
+ 1b0:	00 0f       	add	r16, r16
+ 1b2:	11 1f       	adc	r17, r17
+ 1b4:	f8 01       	movw	r30, r16
+ 1b6:	e8 5f       	subi	r30, 0xF8	; 248
+ 1b8:	fe 4f       	sbci	r31, 0xFE	; 254
+ 1ba:	11 82       	std	Z+1, r1	; 0x01
+ 1bc:	10 82       	st	Z, r1
+
+			}
+		return -1; // Return -1 for the won variable to stay the same if no one has won yet.
+ 1be:	8f ef       	ldi	r24, 0xFF	; 255
+ 1c0:	03 c0       	rjmp	.+6      	; 0x1c8 <processPressedButton+0x8c>
+ 1c2:	8f ef       	ldi	r24, 0xFF	; 255
+ 1c4:	01 c0       	rjmp	.+2      	; 0x1c8 <processPressedButton+0x8c>
+					if(playerCounter[playerID] < 6) // This is to check if the player didn't exceed the number of LEDs.
+						playerCounter[playerID]++;
+
+					else // If the player pressed the button 7 times and led all the the LEDs then return that the player has one.
+					{
+						return playerID;
+ 1c6:	8c 2f       	mov	r24, r28
+
+				pressed_confidence_level[playerID] = 0; // Resetting the check for confidence level if we took action based on a past achieved level to start over.
+
+			}
+		return -1; // Return -1 for the won variable to stay the same if no one has won yet.
+}
+ 1c8:	cf 91       	pop	r28
+ 1ca:	1f 91       	pop	r17
+ 1cc:	0f 91       	pop	r16
+ 1ce:	08 95       	ret
+
+000001d0 <processReleasesButton>:
+	/* This variable is to make sure that the  button is released for at least that amount of CONFIDENCE_LEVEL
+	to avoid the button De-bouncing problem.(index 0 for 1st player and 1 for 2nd player)*/
+	static int released_confidence_level[2] = {0, 0};
+			
+
+	released_confidence_level[playerID]++; // Incrementing the value each iteration to check on the button if it's released at least the CONFIDENCE_LEVEL.
+ 1d0:	90 e0       	ldi	r25, 0x00	; 0
+ 1d2:	fc 01       	movw	r30, r24
+ 1d4:	ee 0f       	add	r30, r30
+ 1d6:	ff 1f       	adc	r31, r31
+ 1d8:	ee 5f       	subi	r30, 0xFE	; 254
+ 1da:	fe 4f       	sbci	r31, 0xFE	; 254
+ 1dc:	20 81       	ld	r18, Z
+ 1de:	31 81       	ldd	r19, Z+1	; 0x01
+ 1e0:	2f 5f       	subi	r18, 0xFF	; 255
+ 1e2:	3f 4f       	sbci	r19, 0xFF	; 255
+ 1e4:	31 83       	std	Z+1, r19	; 0x01
+ 1e6:	20 83       	st	Z, r18
+	if(released_confidence_level[playerID] >= CONFIDENCE_LEVEL)
+ 1e8:	24 3f       	cpi	r18, 0xF4	; 244
+ 1ea:	31 40       	sbci	r19, 0x01	; 1
+ 1ec:	64 f0       	brlt	.+24     	; 0x206 <processReleasesButton+0x36>
+
+	{
+		pressed[playerID] = 1; // Setting the pressed[i] to 1 to indicate that the button is not pressed
+ 1ee:	fc 01       	movw	r30, r24
+ 1f0:	e0 50       	subi	r30, 0x00	; 0
+ 1f2:	ff 4f       	sbci	r31, 0xFF	; 255
+ 1f4:	21 e0       	ldi	r18, 0x01	; 1
+ 1f6:	20 83       	st	Z, r18
+		released_confidence_level[playerID] = 0; // Resetting the check for confidence level if we took action based on a past achieved level to start over.
+ 1f8:	88 0f       	add	r24, r24
+ 1fa:	99 1f       	adc	r25, r25
+ 1fc:	fc 01       	movw	r30, r24
+ 1fe:	ee 5f       	subi	r30, 0xFE	; 254
+ 200:	fe 4f       	sbci	r31, 0xFE	; 254
+ 202:	11 82       	std	Z+1, r1	; 0x01
+ 204:	10 82       	st	Z, r1
+ 206:	08 95       	ret
+
+00000208 <blinkAllLEDs>:
+	}
+
+}
+
+void blinkAllLEDs(uint8_t playerID){
+	switch (playerID){
+ 208:	88 23       	and	r24, r24
+ 20a:	19 f0       	breq	.+6      	; 0x212 <blinkAllLEDs+0xa>
+ 20c:	81 30       	cpi	r24, 0x01	; 1
+ 20e:	39 f1       	breq	.+78     	; 0x25e <blinkAllLEDs+0x56>
+ 210:	08 95       	ret
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 212:	2f ef       	ldi	r18, 0xFF	; 255
+ 214:	84 e3       	ldi	r24, 0x34	; 52
+ 216:	9c e0       	ldi	r25, 0x0C	; 12
+ 218:	21 50       	subi	r18, 0x01	; 1
+ 21a:	80 40       	sbci	r24, 0x00	; 0
+ 21c:	90 40       	sbci	r25, 0x00	; 0
+ 21e:	e1 f7       	brne	.-8      	; 0x218 <blinkAllLEDs+0x10>
+ 220:	00 c0       	rjmp	.+0      	; 0x222 <blinkAllLEDs+0x1a>
+ 222:	00 00       	nop
+		case PLAYER_ONE: // Toggling LEDs for 1st player with a delay of 4000 ms.
+			_delay_ms(4000);
+			LED_toggle(PLAYER_1_PORT, LED_1_PIN);
+ 224:	60 e0       	ldi	r22, 0x00	; 0
+ 226:	82 e4       	ldi	r24, 0x42	; 66
+ 228:	0e 94 95 01 	call	0x32a	; 0x32a <LED_toggle>
+			LED_toggle(PLAYER_1_PORT, LED_2_PIN);
+ 22c:	61 e0       	ldi	r22, 0x01	; 1
+ 22e:	82 e4       	ldi	r24, 0x42	; 66
+ 230:	0e 94 95 01 	call	0x32a	; 0x32a <LED_toggle>
+			LED_toggle(PLAYER_1_PORT, LED_3_PIN);
+ 234:	62 e0       	ldi	r22, 0x02	; 2
+ 236:	82 e4       	ldi	r24, 0x42	; 66
+ 238:	0e 94 95 01 	call	0x32a	; 0x32a <LED_toggle>
+			LED_toggle(PLAYER_1_PORT, LED_4_PIN);
+ 23c:	63 e0       	ldi	r22, 0x03	; 3
+ 23e:	82 e4       	ldi	r24, 0x42	; 66
+ 240:	0e 94 95 01 	call	0x32a	; 0x32a <LED_toggle>
+			LED_toggle(PLAYER_1_PORT, LED_5_PIN);
+ 244:	64 e0       	ldi	r22, 0x04	; 4
+ 246:	82 e4       	ldi	r24, 0x42	; 66
+ 248:	0e 94 95 01 	call	0x32a	; 0x32a <LED_toggle>
+			LED_toggle(PLAYER_1_PORT, LED_6_PIN);
+ 24c:	65 e0       	ldi	r22, 0x05	; 5
+ 24e:	82 e4       	ldi	r24, 0x42	; 66
+ 250:	0e 94 95 01 	call	0x32a	; 0x32a <LED_toggle>
+			LED_toggle(PLAYER_1_PORT, LED_7_PIN);
+ 254:	66 e0       	ldi	r22, 0x06	; 6
+ 256:	82 e4       	ldi	r24, 0x42	; 66
+ 258:	0e 94 95 01 	call	0x32a	; 0x32a <LED_toggle>
+			break;
+ 25c:	08 95       	ret
+ 25e:	2f ef       	ldi	r18, 0xFF	; 255
+ 260:	84 e3       	ldi	r24, 0x34	; 52
+ 262:	9c e0       	ldi	r25, 0x0C	; 12
+ 264:	21 50       	subi	r18, 0x01	; 1
+ 266:	80 40       	sbci	r24, 0x00	; 0
+ 268:	90 40       	sbci	r25, 0x00	; 0
+ 26a:	e1 f7       	brne	.-8      	; 0x264 <blinkAllLEDs+0x5c>
+ 26c:	00 c0       	rjmp	.+0      	; 0x26e <blinkAllLEDs+0x66>
+ 26e:	00 00       	nop
+		case PLAYER_TWO: // Toggling LEDs for 2nd player with a delay of 4000 ms.
+			_delay_ms(4000);
+			LED_toggle(PLAYER_2_PORT, LED_01_PIN);
+ 270:	60 e0       	ldi	r22, 0x00	; 0
+ 272:	84 e4       	ldi	r24, 0x44	; 68
+ 274:	0e 94 95 01 	call	0x32a	; 0x32a <LED_toggle>
+			LED_toggle(PLAYER_2_PORT, LED_02_PIN);
+ 278:	61 e0       	ldi	r22, 0x01	; 1
+ 27a:	84 e4       	ldi	r24, 0x44	; 68
+ 27c:	0e 94 95 01 	call	0x32a	; 0x32a <LED_toggle>
+			LED_toggle(PLAYER_2_PORT, LED_03_PIN);
+ 280:	62 e0       	ldi	r22, 0x02	; 2
+ 282:	84 e4       	ldi	r24, 0x44	; 68
+ 284:	0e 94 95 01 	call	0x32a	; 0x32a <LED_toggle>
+			LED_toggle(PLAYER_2_PORT, LED_04_PIN);
+ 288:	63 e0       	ldi	r22, 0x03	; 3
+ 28a:	84 e4       	ldi	r24, 0x44	; 68
+ 28c:	0e 94 95 01 	call	0x32a	; 0x32a <LED_toggle>
+			LED_toggle(PLAYER_2_PORT, LED_05_PIN);
+ 290:	64 e0       	ldi	r22, 0x04	; 4
+ 292:	84 e4       	ldi	r24, 0x44	; 68
+ 294:	0e 94 95 01 	call	0x32a	; 0x32a <LED_toggle>
+			LED_toggle(PLAYER_2_PORT, LED_06_PIN);
+ 298:	65 e0       	ldi	r22, 0x05	; 5
+ 29a:	84 e4       	ldi	r24, 0x44	; 68
+ 29c:	0e 94 95 01 	call	0x32a	; 0x32a <LED_toggle>
+			LED_toggle(PLAYER_2_PORT, LED_07_PIN);
+ 2a0:	66 e0       	ldi	r22, 0x06	; 6
+ 2a2:	84 e4       	ldi	r24, 0x44	; 68
+ 2a4:	0e 94 95 01 	call	0x32a	; 0x32a <LED_toggle>
+ 2a8:	08 95       	ret
+
+000002aa <appStart>:
+	buttonInit(BUTTON_2_PORT, BUTTON_2_PIN); //
+}
+
+
+
+void appStart(){
+ 2aa:	cf 93       	push	r28
+ 2ac:	df 93       	push	r29
+ 2ae:	00 d0       	rcall	.+0      	; 0x2b0 <appStart+0x6>
+ 2b0:	cd b7       	in	r28, 0x3d	; 61
+ 2b2:	de b7       	in	r29, 0x3e	; 62
+	/* This variable to detect if any of the players has won and therefor the game has ended.
+		* -1 -> No won has won yet and the game is still going.
+		* PLAYER_ONE -> player 1 has won.
+		* PLAYER_TWO -> player 2 has won.
+	*/
+	int8_t won = -1;
+ 2b4:	1f ef       	ldi	r17, 0xFF	; 255
+	
+	while(1)
+	{
+		if (won == -1) // Check if the game is still going.
+ 2b6:	1f 3f       	cpi	r17, 0xFF	; 255
+ 2b8:	29 f5       	brne	.+74     	; 0x304 <appStart+0x5a>
+				{
+					// Read the state of the button by passing the variable value by reference for 1st player, index 0.
+					buttonRead(BUTTON_1_PORT, BUTTON_1_PIN, &value[0]);
+ 2ba:	ae 01       	movw	r20, r28
+ 2bc:	4f 5f       	subi	r20, 0xFF	; 255
+ 2be:	5f 4f       	sbci	r21, 0xFF	; 255
+ 2c0:	67 e0       	ldi	r22, 0x07	; 7
+ 2c2:	82 e4       	ldi	r24, 0x42	; 66
+ 2c4:	0e 94 8a 01 	call	0x314	; 0x314 <buttonRead>
+					
+					// Read the state of the button by passing the variable value by reference for 2nd player, index 1.
+					buttonRead(BUTTON_2_PORT, BUTTON_2_PIN, &value[1]);
+ 2c8:	ae 01       	movw	r20, r28
+ 2ca:	4e 5f       	subi	r20, 0xFE	; 254
+ 2cc:	5f 4f       	sbci	r21, 0xFF	; 255
+ 2ce:	67 e0       	ldi	r22, 0x07	; 7
+ 2d0:	84 e4       	ldi	r24, 0x44	; 68
+ 2d2:	0e 94 8a 01 	call	0x314	; 0x314 <buttonRead>
+					
+					/************************************************************************/
+					/* Check if the button pressed for 1st player                           */
+					/************************************************************************/
+					// Check if the button is pressed(value[0] = 1).
+					if(value[0])
+ 2d6:	89 81       	ldd	r24, Y+1	; 0x01
+ 2d8:	88 23       	and	r24, r24
+ 2da:	29 f0       	breq	.+10     	; 0x2e6 <appStart+0x3c>
+					{
+						won = processPressedButton(PLAYER_ONE);
+ 2dc:	80 e0       	ldi	r24, 0x00	; 0
+ 2de:	0e 94 9e 00 	call	0x13c	; 0x13c <processPressedButton>
+ 2e2:	18 2f       	mov	r17, r24
+ 2e4:	03 c0       	rjmp	.+6      	; 0x2ec <appStart+0x42>
+					}
+					else // Or if it's released (value[0] = 0).
+					{
+						processReleasesButton(PLAYER_ONE);
+ 2e6:	80 e0       	ldi	r24, 0x00	; 0
+ 2e8:	0e 94 e8 00 	call	0x1d0	; 0x1d0 <processReleasesButton>
+
+					/* Check if the button pressed for 2nd player                           */
+
+					/************************************************************************/
+					// Check if the button is pressed(value[1] = 1).
+					if(value[1])
+ 2ec:	8a 81       	ldd	r24, Y+2	; 0x02
+ 2ee:	88 23       	and	r24, r24
+ 2f0:	29 f0       	breq	.+10     	; 0x2fc <appStart+0x52>
+					{
+						won = processPressedButton(PLAYER_TWO);
+ 2f2:	81 e0       	ldi	r24, 0x01	; 1
+ 2f4:	0e 94 9e 00 	call	0x13c	; 0x13c <processPressedButton>
+ 2f8:	18 2f       	mov	r17, r24
+ 2fa:	dd cf       	rjmp	.-70     	; 0x2b6 <appStart+0xc>
+					}
+					else //  Or if it's released(value[1] = 0).
+					{
+						processReleasesButton(PLAYER_TWO);
+ 2fc:	81 e0       	ldi	r24, 0x01	; 1
+ 2fe:	0e 94 e8 00 	call	0x1d0	; 0x1d0 <processReleasesButton>
+ 302:	d9 cf       	rjmp	.-78     	; 0x2b6 <appStart+0xc>
+					}
+				}
+				else
+				{
+					// This will be executed if the game has ended and not won has value of one of the players instead of -1.
+					blinkAllLEDs(won);
+ 304:	81 2f       	mov	r24, r17
+ 306:	0e 94 04 01 	call	0x208	; 0x208 <blinkAllLEDs>
+ 30a:	d5 cf       	rjmp	.-86     	; 0x2b6 <appStart+0xc>
+
+0000030c <buttonInit>:
+/*
+	Just call the DIO_init with the arguments along with value IN to initialize the pin on the port as input.
+*/
+void buttonInit(uint8_t buttonPort, uint8_t buttonPin)
+{
+	DIO_init(buttonPort, buttonPin, IN);
+ 30c:	40 e0       	ldi	r20, 0x00	; 0
+ 30e:	0e 94 9d 01 	call	0x33a	; 0x33a <DIO_init>
+ 312:	08 95       	ret
+
+00000314 <buttonRead>:
+// buttonRead skeletal.
+/*
+	Just call the DIO_read with the arguments to get the value on the desired pin.
+*/
+void buttonRead(uint8_t buttonPort, uint8_t buttonPin, uint8_t *value){
+	DIO_read(buttonPort, buttonPin, value);
+ 314:	0e 94 c8 02 	call	0x590	; 0x590 <DIO_read>
+ 318:	08 95       	ret
+
+0000031a <LED_init>:
+/*
+	Just call the DIO_write with the arguments and value LOW to write 0 on the pin for the desired port.
+*/
+void LED_off(uint8_t ledPort, uint8_t ledPin){
+		// This function just calls the DIO to write 0 on the desired port of the led.
+		DIO_write(ledPort, ledPin, LOW);
+ 31a:	41 e0       	ldi	r20, 0x01	; 1
+ 31c:	0e 94 9d 01 	call	0x33a	; 0x33a <DIO_init>
+ 320:	08 95       	ret
+
+00000322 <LED_on>:
+ 322:	41 e0       	ldi	r20, 0x01	; 1
+ 324:	0e 94 17 02 	call	0x42e	; 0x42e <DIO_write>
+ 328:	08 95       	ret
+
+0000032a <LED_toggle>:
+/*
+	Just call the DIO_toggle with the arguments to invert the value on the pin.
+*/
+void LED_toggle(uint8_t ledPort, uint8_t ledPin){
+		// This function just calls the DIO to change the state of the desired port of the led from 1 to 0 and vice versa.
+		DIO_toggle(ledPort, ledPin);
+ 32a:	0e 94 91 02 	call	0x522	; 0x522 <DIO_toggle>
+ 32e:	08 95       	ret
+
+00000330 <main>:
+
+int main(void)
+{
+    while (1) 
+    {
+		appInit();
+ 330:	0e 94 5d 00 	call	0xba	; 0xba <appInit>
+		appStart();
+ 334:	0e 94 55 01 	call	0x2aa	; 0x2aa <appStart>
+ 338:	fb cf       	rjmp	.-10     	; 0x330 <main>
+
+0000033a <DIO_init>:
+	2- Based on the direction, assign 1 to the pin on DDRA if output and 0 if input.
+*/
+void DIO_init(uint8_t portNumber, uint8_t pinNumber, uint8_t direction) // initialize DIO direction
+{
+	// First check on the port number to apply changes to the desired one.
+	switch(portNumber){
+ 33a:	82 34       	cpi	r24, 0x42	; 66
+ 33c:	31 f1       	breq	.+76     	; 0x38a <DIO_init+0x50>
+ 33e:	18 f4       	brcc	.+6      	; 0x346 <DIO_init+0xc>
+ 340:	81 34       	cpi	r24, 0x41	; 65
+ 342:	39 f0       	breq	.+14     	; 0x352 <DIO_init+0x18>
+ 344:	08 95       	ret
+ 346:	83 34       	cpi	r24, 0x43	; 67
+ 348:	e1 f1       	breq	.+120    	; 0x3c2 <DIO_init+0x88>
+ 34a:	84 34       	cpi	r24, 0x44	; 68
+ 34c:	09 f4       	brne	.+2      	; 0x350 <DIO_init+0x16>
+ 34e:	54 c0       	rjmp	.+168    	; 0x3f8 <DIO_init+0xbe>
+ 350:	08 95       	ret
+		case PORT_A:
+			if(direction == IN) // Now this is to check on the direction.
+ 352:	41 11       	cpse	r20, r1
+ 354:	0c c0       	rjmp	.+24     	; 0x36e <DIO_init+0x34>
+			{
+				DDRA &= ~(1<<pinNumber); //Input(Assign 0 to the pin if it's input bin).
+ 356:	21 b1       	in	r18, 0x01	; 1
+ 358:	81 e0       	ldi	r24, 0x01	; 1
+ 35a:	90 e0       	ldi	r25, 0x00	; 0
+ 35c:	02 c0       	rjmp	.+4      	; 0x362 <DIO_init+0x28>
+ 35e:	88 0f       	add	r24, r24
+ 360:	99 1f       	adc	r25, r25
+ 362:	6a 95       	dec	r22
+ 364:	e2 f7       	brpl	.-8      	; 0x35e <DIO_init+0x24>
+ 366:	80 95       	com	r24
+ 368:	82 23       	and	r24, r18
+ 36a:	81 b9       	out	0x01, r24	; 1
+ 36c:	08 95       	ret
+			}
+			else if(direction == OUT)
+ 36e:	41 30       	cpi	r20, 0x01	; 1
+ 370:	09 f0       	breq	.+2      	; 0x374 <DIO_init+0x3a>
+ 372:	5c c0       	rjmp	.+184    	; 0x42c <__EEPROM_REGION_LENGTH__+0x2c>
+			{
+				DDRA |= (1<<pinNumber); // output(Assign 1 to the pin if it's input bin).
+ 374:	21 b1       	in	r18, 0x01	; 1
+ 376:	81 e0       	ldi	r24, 0x01	; 1
+ 378:	90 e0       	ldi	r25, 0x00	; 0
+ 37a:	02 c0       	rjmp	.+4      	; 0x380 <DIO_init+0x46>
+ 37c:	88 0f       	add	r24, r24
+ 37e:	99 1f       	adc	r25, r25
+ 380:	6a 95       	dec	r22
+ 382:	e2 f7       	brpl	.-8      	; 0x37c <DIO_init+0x42>
+ 384:	82 2b       	or	r24, r18
+ 386:	81 b9       	out	0x01, r24	; 1
+ 388:	08 95       	ret
+				//Error handling technique.
+			}
+			break;
+		
+		case PORT_B:
+			if(direction == IN)
+ 38a:	41 11       	cpse	r20, r1
+ 38c:	0c c0       	rjmp	.+24     	; 0x3a6 <DIO_init+0x6c>
+			{
+				DDRB &= ~(1<<pinNumber); //Input
+ 38e:	24 b1       	in	r18, 0x04	; 4
+ 390:	81 e0       	ldi	r24, 0x01	; 1
+ 392:	90 e0       	ldi	r25, 0x00	; 0
+ 394:	02 c0       	rjmp	.+4      	; 0x39a <DIO_init+0x60>
+ 396:	88 0f       	add	r24, r24
+ 398:	99 1f       	adc	r25, r25
+ 39a:	6a 95       	dec	r22
+ 39c:	e2 f7       	brpl	.-8      	; 0x396 <DIO_init+0x5c>
+ 39e:	80 95       	com	r24
+ 3a0:	82 23       	and	r24, r18
+ 3a2:	84 b9       	out	0x04, r24	; 4
+ 3a4:	08 95       	ret
+			}
+			else if(direction == OUT)
+ 3a6:	41 30       	cpi	r20, 0x01	; 1
+ 3a8:	09 f0       	breq	.+2      	; 0x3ac <DIO_init+0x72>
+ 3aa:	40 c0       	rjmp	.+128    	; 0x42c <__EEPROM_REGION_LENGTH__+0x2c>
+			{
+				DDRB |= (1<<pinNumber); // output
+ 3ac:	24 b1       	in	r18, 0x04	; 4
+ 3ae:	81 e0       	ldi	r24, 0x01	; 1
+ 3b0:	90 e0       	ldi	r25, 0x00	; 0
+ 3b2:	02 c0       	rjmp	.+4      	; 0x3b8 <DIO_init+0x7e>
+ 3b4:	88 0f       	add	r24, r24
+ 3b6:	99 1f       	adc	r25, r25
+ 3b8:	6a 95       	dec	r22
+ 3ba:	e2 f7       	brpl	.-8      	; 0x3b4 <DIO_init+0x7a>
+ 3bc:	82 2b       	or	r24, r18
+ 3be:	84 b9       	out	0x04, r24	; 4
+ 3c0:	08 95       	ret
+				//Error handling technique.
+			}
+			break;
+			
+		case PORT_C:
+			if(direction == IN)
+ 3c2:	41 11       	cpse	r20, r1
+ 3c4:	0c c0       	rjmp	.+24     	; 0x3de <DIO_init+0xa4>
+			{
+				DDRC &= ~(1<<pinNumber); //Input
+ 3c6:	27 b1       	in	r18, 0x07	; 7
+ 3c8:	81 e0       	ldi	r24, 0x01	; 1
+ 3ca:	90 e0       	ldi	r25, 0x00	; 0
+ 3cc:	02 c0       	rjmp	.+4      	; 0x3d2 <DIO_init+0x98>
+ 3ce:	88 0f       	add	r24, r24
+ 3d0:	99 1f       	adc	r25, r25
+ 3d2:	6a 95       	dec	r22
+ 3d4:	e2 f7       	brpl	.-8      	; 0x3ce <DIO_init+0x94>
+ 3d6:	80 95       	com	r24
+ 3d8:	82 23       	and	r24, r18
+ 3da:	87 b9       	out	0x07, r24	; 7
+ 3dc:	08 95       	ret
+			}
+			else if(direction == OUT)
+ 3de:	41 30       	cpi	r20, 0x01	; 1
+ 3e0:	29 f5       	brne	.+74     	; 0x42c <__EEPROM_REGION_LENGTH__+0x2c>
+			{
+				DDRC |= (1<<pinNumber); // output
+ 3e2:	27 b1       	in	r18, 0x07	; 7
+ 3e4:	81 e0       	ldi	r24, 0x01	; 1
+ 3e6:	90 e0       	ldi	r25, 0x00	; 0
+ 3e8:	02 c0       	rjmp	.+4      	; 0x3ee <DIO_init+0xb4>
+ 3ea:	88 0f       	add	r24, r24
+ 3ec:	99 1f       	adc	r25, r25
+ 3ee:	6a 95       	dec	r22
+ 3f0:	e2 f7       	brpl	.-8      	; 0x3ea <DIO_init+0xb0>
+ 3f2:	82 2b       	or	r24, r18
+ 3f4:	87 b9       	out	0x07, r24	; 7
+ 3f6:	08 95       	ret
+				//Error handling technique.
+			}
+			break;
+		
+		case PORT_D:
+			if(direction == IN)
+ 3f8:	41 11       	cpse	r20, r1
+ 3fa:	0c c0       	rjmp	.+24     	; 0x414 <__EEPROM_REGION_LENGTH__+0x14>
+			{
+				DDRD &= ~(1<<pinNumber); //Input
+ 3fc:	2a b1       	in	r18, 0x0a	; 10
+ 3fe:	81 e0       	ldi	r24, 0x01	; 1
+ 400:	90 e0       	ldi	r25, 0x00	; 0
+ 402:	02 c0       	rjmp	.+4      	; 0x408 <__EEPROM_REGION_LENGTH__+0x8>
+ 404:	88 0f       	add	r24, r24
+ 406:	99 1f       	adc	r25, r25
+ 408:	6a 95       	dec	r22
+ 40a:	e2 f7       	brpl	.-8      	; 0x404 <__EEPROM_REGION_LENGTH__+0x4>
+ 40c:	80 95       	com	r24
+ 40e:	82 23       	and	r24, r18
+ 410:	8a b9       	out	0x0a, r24	; 10
+ 412:	08 95       	ret
+			}
+			else if(direction == OUT)
+ 414:	41 30       	cpi	r20, 0x01	; 1
+ 416:	51 f4       	brne	.+20     	; 0x42c <__EEPROM_REGION_LENGTH__+0x2c>
+			{
+				DDRD |= (1<<pinNumber); // output
+ 418:	2a b1       	in	r18, 0x0a	; 10
+ 41a:	81 e0       	ldi	r24, 0x01	; 1
+ 41c:	90 e0       	ldi	r25, 0x00	; 0
+ 41e:	02 c0       	rjmp	.+4      	; 0x424 <__EEPROM_REGION_LENGTH__+0x24>
+ 420:	88 0f       	add	r24, r24
+ 422:	99 1f       	adc	r25, r25
+ 424:	6a 95       	dec	r22
+ 426:	e2 f7       	brpl	.-8      	; 0x420 <__EEPROM_REGION_LENGTH__+0x20>
+ 428:	82 2b       	or	r24, r18
+ 42a:	8a b9       	out	0x0a, r24	; 10
+ 42c:	08 95       	ret
+
+0000042e <DIO_write>:
+	1- Check on the port number.
+	2- Based on the value, assign 1 to the pin on PORTA if HIGH and 0 if LOW.
+*/
+void DIO_write(uint8_t portNumber, uint8_t pinNumber, uint8_t value) // write data to DIO
+{
+	switch(portNumber){
+ 42e:	82 34       	cpi	r24, 0x42	; 66
+ 430:	31 f1       	breq	.+76     	; 0x47e <DIO_write+0x50>
+ 432:	18 f4       	brcc	.+6      	; 0x43a <DIO_write+0xc>
+ 434:	81 34       	cpi	r24, 0x41	; 65
+ 436:	39 f0       	breq	.+14     	; 0x446 <DIO_write+0x18>
+ 438:	08 95       	ret
+ 43a:	83 34       	cpi	r24, 0x43	; 67
+ 43c:	e1 f1       	breq	.+120    	; 0x4b6 <DIO_write+0x88>
+ 43e:	84 34       	cpi	r24, 0x44	; 68
+ 440:	09 f4       	brne	.+2      	; 0x444 <DIO_write+0x16>
+ 442:	54 c0       	rjmp	.+168    	; 0x4ec <DIO_write+0xbe>
+ 444:	08 95       	ret
+		case PORT_A:
+			if(value == LOW)
+ 446:	41 11       	cpse	r20, r1
+ 448:	0c c0       	rjmp	.+24     	; 0x462 <DIO_write+0x34>
+			{
+				PORTA &= ~(1<<pinNumber); //write 0
+ 44a:	22 b1       	in	r18, 0x02	; 2
+ 44c:	81 e0       	ldi	r24, 0x01	; 1
+ 44e:	90 e0       	ldi	r25, 0x00	; 0
+ 450:	02 c0       	rjmp	.+4      	; 0x456 <DIO_write+0x28>
+ 452:	88 0f       	add	r24, r24
+ 454:	99 1f       	adc	r25, r25
+ 456:	6a 95       	dec	r22
+ 458:	e2 f7       	brpl	.-8      	; 0x452 <DIO_write+0x24>
+ 45a:	80 95       	com	r24
+ 45c:	82 23       	and	r24, r18
+ 45e:	82 b9       	out	0x02, r24	; 2
+ 460:	08 95       	ret
+			}
+			else if(value == HIGH)
+ 462:	41 30       	cpi	r20, 0x01	; 1
+ 464:	09 f0       	breq	.+2      	; 0x468 <DIO_write+0x3a>
+ 466:	5c c0       	rjmp	.+184    	; 0x520 <DIO_write+0xf2>
+			{
+				PORTA |= (1<<pinNumber); // write 1
+ 468:	22 b1       	in	r18, 0x02	; 2
+ 46a:	81 e0       	ldi	r24, 0x01	; 1
+ 46c:	90 e0       	ldi	r25, 0x00	; 0
+ 46e:	02 c0       	rjmp	.+4      	; 0x474 <DIO_write+0x46>
+ 470:	88 0f       	add	r24, r24
+ 472:	99 1f       	adc	r25, r25
+ 474:	6a 95       	dec	r22
+ 476:	e2 f7       	brpl	.-8      	; 0x470 <DIO_write+0x42>
+ 478:	82 2b       	or	r24, r18
+ 47a:	82 b9       	out	0x02, r24	; 2
+ 47c:	08 95       	ret
+				//Error handling technique.
+			}
+			break;
+	
+		case PORT_B:
+			if(value == LOW)
+ 47e:	41 11       	cpse	r20, r1
+ 480:	0c c0       	rjmp	.+24     	; 0x49a <DIO_write+0x6c>
+			{
+				PORTB &= ~(1<<pinNumber); //write 0
+ 482:	25 b1       	in	r18, 0x05	; 5
+ 484:	81 e0       	ldi	r24, 0x01	; 1
+ 486:	90 e0       	ldi	r25, 0x00	; 0
+ 488:	02 c0       	rjmp	.+4      	; 0x48e <DIO_write+0x60>
+ 48a:	88 0f       	add	r24, r24
+ 48c:	99 1f       	adc	r25, r25
+ 48e:	6a 95       	dec	r22
+ 490:	e2 f7       	brpl	.-8      	; 0x48a <DIO_write+0x5c>
+ 492:	80 95       	com	r24
+ 494:	82 23       	and	r24, r18
+ 496:	85 b9       	out	0x05, r24	; 5
+ 498:	08 95       	ret
+			}
+			else if(value == HIGH)
+ 49a:	41 30       	cpi	r20, 0x01	; 1
+ 49c:	09 f0       	breq	.+2      	; 0x4a0 <DIO_write+0x72>
+ 49e:	40 c0       	rjmp	.+128    	; 0x520 <DIO_write+0xf2>
+			{
+				PORTB |= (1<<pinNumber); // write 1
+ 4a0:	25 b1       	in	r18, 0x05	; 5
+ 4a2:	81 e0       	ldi	r24, 0x01	; 1
+ 4a4:	90 e0       	ldi	r25, 0x00	; 0
+ 4a6:	02 c0       	rjmp	.+4      	; 0x4ac <DIO_write+0x7e>
+ 4a8:	88 0f       	add	r24, r24
+ 4aa:	99 1f       	adc	r25, r25
+ 4ac:	6a 95       	dec	r22
+ 4ae:	e2 f7       	brpl	.-8      	; 0x4a8 <DIO_write+0x7a>
+ 4b0:	82 2b       	or	r24, r18
+ 4b2:	85 b9       	out	0x05, r24	; 5
+ 4b4:	08 95       	ret
+				//Error handling technique.
+			}
+			break;
+	
+		case PORT_C:
+			if(value == LOW)
+ 4b6:	41 11       	cpse	r20, r1
+ 4b8:	0c c0       	rjmp	.+24     	; 0x4d2 <DIO_write+0xa4>
+			{
+				PORTC &= ~(1<<pinNumber); //write 0
+ 4ba:	28 b1       	in	r18, 0x08	; 8
+ 4bc:	81 e0       	ldi	r24, 0x01	; 1
+ 4be:	90 e0       	ldi	r25, 0x00	; 0
+ 4c0:	02 c0       	rjmp	.+4      	; 0x4c6 <DIO_write+0x98>
+ 4c2:	88 0f       	add	r24, r24
+ 4c4:	99 1f       	adc	r25, r25
+ 4c6:	6a 95       	dec	r22
+ 4c8:	e2 f7       	brpl	.-8      	; 0x4c2 <DIO_write+0x94>
+ 4ca:	80 95       	com	r24
+ 4cc:	82 23       	and	r24, r18
+ 4ce:	88 b9       	out	0x08, r24	; 8
+ 4d0:	08 95       	ret
+			}
+			else if(value == HIGH)
+ 4d2:	41 30       	cpi	r20, 0x01	; 1
+ 4d4:	29 f5       	brne	.+74     	; 0x520 <DIO_write+0xf2>
+			{
+				PORTC |= (1<<pinNumber); // write 1
+ 4d6:	28 b1       	in	r18, 0x08	; 8
+ 4d8:	81 e0       	ldi	r24, 0x01	; 1
+ 4da:	90 e0       	ldi	r25, 0x00	; 0
+ 4dc:	02 c0       	rjmp	.+4      	; 0x4e2 <DIO_write+0xb4>
+ 4de:	88 0f       	add	r24, r24
+ 4e0:	99 1f       	adc	r25, r25
+ 4e2:	6a 95       	dec	r22
+ 4e4:	e2 f7       	brpl	.-8      	; 0x4de <DIO_write+0xb0>
+ 4e6:	82 2b       	or	r24, r18
+ 4e8:	88 b9       	out	0x08, r24	; 8
+ 4ea:	08 95       	ret
+				//Error handling technique.
+			}
+			break;
+	
+		case PORT_D:
+			if(value == LOW)
+ 4ec:	41 11       	cpse	r20, r1
+ 4ee:	0c c0       	rjmp	.+24     	; 0x508 <DIO_write+0xda>
+			{
+				PORTD &= ~(1<<pinNumber); //write 0
+ 4f0:	2b b1       	in	r18, 0x0b	; 11
+ 4f2:	81 e0       	ldi	r24, 0x01	; 1
+ 4f4:	90 e0       	ldi	r25, 0x00	; 0
+ 4f6:	02 c0       	rjmp	.+4      	; 0x4fc <DIO_write+0xce>
+ 4f8:	88 0f       	add	r24, r24
+ 4fa:	99 1f       	adc	r25, r25
+ 4fc:	6a 95       	dec	r22
+ 4fe:	e2 f7       	brpl	.-8      	; 0x4f8 <DIO_write+0xca>
+ 500:	80 95       	com	r24
+ 502:	82 23       	and	r24, r18
+ 504:	8b b9       	out	0x0b, r24	; 11
+ 506:	08 95       	ret
+			}
+			else if(value == HIGH)
+ 508:	41 30       	cpi	r20, 0x01	; 1
+ 50a:	51 f4       	brne	.+20     	; 0x520 <DIO_write+0xf2>
+			{
+				PORTD |= (1<<pinNumber); // write 1
+ 50c:	2b b1       	in	r18, 0x0b	; 11
+ 50e:	81 e0       	ldi	r24, 0x01	; 1
+ 510:	90 e0       	ldi	r25, 0x00	; 0
+ 512:	02 c0       	rjmp	.+4      	; 0x518 <DIO_write+0xea>
+ 514:	88 0f       	add	r24, r24
+ 516:	99 1f       	adc	r25, r25
+ 518:	6a 95       	dec	r22
+ 51a:	e2 f7       	brpl	.-8      	; 0x514 <DIO_write+0xe6>
+ 51c:	82 2b       	or	r24, r18
+ 51e:	8b b9       	out	0x0b, r24	; 11
+ 520:	08 95       	ret
+
+00000522 <DIO_toggle>:
+	1- Check on the port number.
+	2- The value on the specified port is gonna be inverted using X-OR function.
+*/
+void DIO_toggle(uint8_t portNumber, uint8_t pinNumber) //toggle DIO
+{
+	switch(portNumber){
+ 522:	82 34       	cpi	r24, 0x42	; 66
+ 524:	a1 f0       	breq	.+40     	; 0x54e <DIO_toggle+0x2c>
+ 526:	18 f4       	brcc	.+6      	; 0x52e <DIO_toggle+0xc>
+ 528:	81 34       	cpi	r24, 0x41	; 65
+ 52a:	31 f0       	breq	.+12     	; 0x538 <DIO_toggle+0x16>
+ 52c:	08 95       	ret
+ 52e:	83 34       	cpi	r24, 0x43	; 67
+ 530:	c9 f0       	breq	.+50     	; 0x564 <DIO_toggle+0x42>
+ 532:	84 34       	cpi	r24, 0x44	; 68
+ 534:	11 f1       	breq	.+68     	; 0x57a <DIO_toggle+0x58>
+ 536:	08 95       	ret
+		case PORT_A:
+			PORTA ^= (1<<pinNumber); // write 1
+ 538:	22 b1       	in	r18, 0x02	; 2
+ 53a:	81 e0       	ldi	r24, 0x01	; 1
+ 53c:	90 e0       	ldi	r25, 0x00	; 0
+ 53e:	02 c0       	rjmp	.+4      	; 0x544 <DIO_toggle+0x22>
+ 540:	88 0f       	add	r24, r24
+ 542:	99 1f       	adc	r25, r25
+ 544:	6a 95       	dec	r22
+ 546:	e2 f7       	brpl	.-8      	; 0x540 <DIO_toggle+0x1e>
+ 548:	82 27       	eor	r24, r18
+ 54a:	82 b9       	out	0x02, r24	; 2
+			break;
+ 54c:	08 95       	ret
+		
+		case PORT_B:
+			PORTB ^= (1<<pinNumber); // write 1
+ 54e:	25 b1       	in	r18, 0x05	; 5
+ 550:	81 e0       	ldi	r24, 0x01	; 1
+ 552:	90 e0       	ldi	r25, 0x00	; 0
+ 554:	02 c0       	rjmp	.+4      	; 0x55a <DIO_toggle+0x38>
+ 556:	88 0f       	add	r24, r24
+ 558:	99 1f       	adc	r25, r25
+ 55a:	6a 95       	dec	r22
+ 55c:	e2 f7       	brpl	.-8      	; 0x556 <DIO_toggle+0x34>
+ 55e:	82 27       	eor	r24, r18
+ 560:	85 b9       	out	0x05, r24	; 5
+			break;
+ 562:	08 95       	ret
+		
+		case PORT_C:
+			PORTC ^= (1<<pinNumber); // write 1
+ 564:	28 b1       	in	r18, 0x08	; 8
+ 566:	81 e0       	ldi	r24, 0x01	; 1
+ 568:	90 e0       	ldi	r25, 0x00	; 0
+ 56a:	02 c0       	rjmp	.+4      	; 0x570 <DIO_toggle+0x4e>
+ 56c:	88 0f       	add	r24, r24
+ 56e:	99 1f       	adc	r25, r25
+ 570:	6a 95       	dec	r22
+ 572:	e2 f7       	brpl	.-8      	; 0x56c <DIO_toggle+0x4a>
+ 574:	82 27       	eor	r24, r18
+ 576:	88 b9       	out	0x08, r24	; 8
+			break;
+ 578:	08 95       	ret
+		
+		case PORT_D:
+			PORTD ^= (1<<pinNumber); // write 1
+ 57a:	2b b1       	in	r18, 0x0b	; 11
+ 57c:	81 e0       	ldi	r24, 0x01	; 1
+ 57e:	90 e0       	ldi	r25, 0x00	; 0
+ 580:	02 c0       	rjmp	.+4      	; 0x586 <DIO_toggle+0x64>
+ 582:	88 0f       	add	r24, r24
+ 584:	99 1f       	adc	r25, r25
+ 586:	6a 95       	dec	r22
+ 588:	e2 f7       	brpl	.-8      	; 0x582 <DIO_toggle+0x60>
+ 58a:	82 27       	eor	r24, r18
+ 58c:	8b b9       	out	0x0b, r24	; 11
+ 58e:	08 95       	ret
+
+00000590 <DIO_read>:
+	1- Check on the port number.
+	2- Read the value on the specified port using GET_BIT directive.
+*/
+uint8_t DIO_read(uint8_t portNumber, uint8_t pinNumber, uint8_t *value) //read DIO
+{
+	switch(portNumber)
+ 590:	82 34       	cpi	r24, 0x42	; 66
+ 592:	01 f1       	breq	.+64     	; 0x5d4 <DIO_read+0x44>
+ 594:	18 f4       	brcc	.+6      	; 0x59c <DIO_read+0xc>
+ 596:	81 34       	cpi	r24, 0x41	; 65
+ 598:	39 f0       	breq	.+14     	; 0x5a8 <DIO_read+0x18>
+ 59a:	08 95       	ret
+ 59c:	83 34       	cpi	r24, 0x43	; 67
+ 59e:	81 f1       	breq	.+96     	; 0x600 <DIO_read+0x70>
+ 5a0:	84 34       	cpi	r24, 0x44	; 68
+ 5a2:	09 f4       	brne	.+2      	; 0x5a6 <DIO_read+0x16>
+ 5a4:	43 c0       	rjmp	.+134    	; 0x62c <DIO_read+0x9c>
+ 5a6:	08 95       	ret
+	{
+		case PORT_A:
+			//*value = (PINA &(1<<pinNumber))>>pinNumber; // GET STATE -> READ BIT
+			*value = GET_BIT(PINA, pinNumber);
+ 5a8:	70 b1       	in	r23, 0x00	; 0
+ 5aa:	81 e0       	ldi	r24, 0x01	; 1
+ 5ac:	90 e0       	ldi	r25, 0x00	; 0
+ 5ae:	9c 01       	movw	r18, r24
+ 5b0:	06 2e       	mov	r0, r22
+ 5b2:	02 c0       	rjmp	.+4      	; 0x5b8 <DIO_read+0x28>
+ 5b4:	22 0f       	add	r18, r18
+ 5b6:	33 1f       	adc	r19, r19
+ 5b8:	0a 94       	dec	r0
+ 5ba:	e2 f7       	brpl	.-8      	; 0x5b4 <DIO_read+0x24>
+ 5bc:	87 2f       	mov	r24, r23
+ 5be:	90 e0       	ldi	r25, 0x00	; 0
+ 5c0:	82 23       	and	r24, r18
+ 5c2:	93 23       	and	r25, r19
+ 5c4:	02 c0       	rjmp	.+4      	; 0x5ca <DIO_read+0x3a>
+ 5c6:	95 95       	asr	r25
+ 5c8:	87 95       	ror	r24
+ 5ca:	6a 95       	dec	r22
+ 5cc:	e2 f7       	brpl	.-8      	; 0x5c6 <DIO_read+0x36>
+ 5ce:	fa 01       	movw	r30, r20
+ 5d0:	80 83       	st	Z, r24
+			break;
+ 5d2:	08 95       	ret
+		
+		case PORT_B:
+			//*value = (PINB &(1<<pinNumber))>>pinNumber; // GET STATE -> READ BIT
+			*value = GET_BIT(PINB, pinNumber);
+ 5d4:	73 b1       	in	r23, 0x03	; 3
+ 5d6:	81 e0       	ldi	r24, 0x01	; 1
+ 5d8:	90 e0       	ldi	r25, 0x00	; 0
+ 5da:	9c 01       	movw	r18, r24
+ 5dc:	06 2e       	mov	r0, r22
+ 5de:	02 c0       	rjmp	.+4      	; 0x5e4 <DIO_read+0x54>
+ 5e0:	22 0f       	add	r18, r18
+ 5e2:	33 1f       	adc	r19, r19
+ 5e4:	0a 94       	dec	r0
+ 5e6:	e2 f7       	brpl	.-8      	; 0x5e0 <DIO_read+0x50>
+ 5e8:	87 2f       	mov	r24, r23
+ 5ea:	90 e0       	ldi	r25, 0x00	; 0
+ 5ec:	82 23       	and	r24, r18
+ 5ee:	93 23       	and	r25, r19
+ 5f0:	02 c0       	rjmp	.+4      	; 0x5f6 <DIO_read+0x66>
+ 5f2:	95 95       	asr	r25
+ 5f4:	87 95       	ror	r24
+ 5f6:	6a 95       	dec	r22
+ 5f8:	e2 f7       	brpl	.-8      	; 0x5f2 <DIO_read+0x62>
+ 5fa:	fa 01       	movw	r30, r20
+ 5fc:	80 83       	st	Z, r24
+			break;
+ 5fe:	08 95       	ret
+		
+		case PORT_C:
+			//*value = (PINC &(1<<pinNumber))>>pinNumber; // GET STATE -> READ BIT
+			*value = GET_BIT(PINC, pinNumber);
+ 600:	76 b1       	in	r23, 0x06	; 6
+ 602:	81 e0       	ldi	r24, 0x01	; 1
+ 604:	90 e0       	ldi	r25, 0x00	; 0
+ 606:	9c 01       	movw	r18, r24
+ 608:	06 2e       	mov	r0, r22
+ 60a:	02 c0       	rjmp	.+4      	; 0x610 <DIO_read+0x80>
+ 60c:	22 0f       	add	r18, r18
+ 60e:	33 1f       	adc	r19, r19
+ 610:	0a 94       	dec	r0
+ 612:	e2 f7       	brpl	.-8      	; 0x60c <DIO_read+0x7c>
+ 614:	87 2f       	mov	r24, r23
+ 616:	90 e0       	ldi	r25, 0x00	; 0
+ 618:	82 23       	and	r24, r18
+ 61a:	93 23       	and	r25, r19
+ 61c:	02 c0       	rjmp	.+4      	; 0x622 <DIO_read+0x92>
+ 61e:	95 95       	asr	r25
+ 620:	87 95       	ror	r24
+ 622:	6a 95       	dec	r22
+ 624:	e2 f7       	brpl	.-8      	; 0x61e <DIO_read+0x8e>
+ 626:	fa 01       	movw	r30, r20
+ 628:	80 83       	st	Z, r24
+			break;
+ 62a:	08 95       	ret
+		
+		case PORT_D:
+			//*value = (PIND &(1<<pinNumber))>>pinNumber; // GET STATE -> READ BIT
+			*value = GET_BIT(PIND, pinNumber);
+ 62c:	79 b1       	in	r23, 0x09	; 9
+ 62e:	81 e0       	ldi	r24, 0x01	; 1
+ 630:	90 e0       	ldi	r25, 0x00	; 0
+ 632:	9c 01       	movw	r18, r24
+ 634:	06 2e       	mov	r0, r22
+ 636:	02 c0       	rjmp	.+4      	; 0x63c <DIO_read+0xac>
+ 638:	22 0f       	add	r18, r18
+ 63a:	33 1f       	adc	r19, r19
+ 63c:	0a 94       	dec	r0
+ 63e:	e2 f7       	brpl	.-8      	; 0x638 <DIO_read+0xa8>
+ 640:	87 2f       	mov	r24, r23
+ 642:	90 e0       	ldi	r25, 0x00	; 0
+ 644:	82 23       	and	r24, r18
+ 646:	93 23       	and	r25, r19
+ 648:	02 c0       	rjmp	.+4      	; 0x64e <DIO_read+0xbe>
+ 64a:	95 95       	asr	r25
+ 64c:	87 95       	ror	r24
+ 64e:	6a 95       	dec	r22
+ 650:	e2 f7       	brpl	.-8      	; 0x64a <DIO_read+0xba>
+ 652:	fa 01       	movw	r30, r20
+ 654:	80 83       	st	Z, r24
+		
+		default:
+			//Error handling.
+			break;
+	}
+}
+ 656:	08 95       	ret
+
+00000658 <_exit>:
+ 658:	f8 94       	cli
+
+0000065a <__stop_program>:
+ 65a:	ff cf       	rjmp	.-2      	; 0x65a <__stop_program>
